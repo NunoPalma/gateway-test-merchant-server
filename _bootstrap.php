@@ -153,6 +153,7 @@ function outputJsonResponse($response) {
     global $region;
     global $merchantId;
     global $password;
+    global $gatewayUrl;
 
     header('Content-Type: application/json');
 
@@ -164,7 +165,8 @@ function outputJsonResponse($response) {
         'headers' => $headers,
         'region' => $region,
         'merchantId' => $merchantId,
-        'password' => $password
+        'password' => $password,
+        'gatewayUrl' => $gatewayUrl
     );
 
     print_r(json_encode($wrapped));
