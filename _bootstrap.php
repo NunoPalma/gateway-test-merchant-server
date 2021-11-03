@@ -31,8 +31,8 @@ $merchantIdPrefix = substr($merchantId, 0, 4);
 // }
 
 // get regional url prefix
-$prefix = 'TEST';
-if (strcasecmp($region, "TEST") == 0) {
+$prefix = 'test';
+/*if (strcasecmp($region, "TEST") == 0) {
     $prefix = 'test'
 } else if (strcasecmp($region, "ASIA_PACIFIC") == 0) {
     $prefix = 'ap';
@@ -62,7 +62,7 @@ if (strcasecmp($region, "TEST") == 0) {
     $prefix = 'perf';
 } else {
     error(500, "Invalid region provided. Valid values include ASIA_PACIFIC, EUROPE, NORTH_AMERICA, INDIA, MTF");
-}
+}*/
 
 // validate apiVersion is above minimum
 if (intval($apiVersion) < 39) {
