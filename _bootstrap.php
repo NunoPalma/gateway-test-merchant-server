@@ -32,7 +32,9 @@ $merchantIdPrefix = substr($merchantId, 0, 4);
 
 // get regional url prefix
 $prefix = 'mtf';
-if (strcasecmp($region, "ASIA_PACIFIC") == 0) {
+if (strcasecmp($region, "TEST") == 0) {
+    $prefix = 'test'
+} else if (strcasecmp($region, "ASIA_PACIFIC") == 0) {
     $prefix = 'ap';
 } else if (strcasecmp($region, "EUROPE") == 0) {
     $prefix = 'eu';
@@ -68,7 +70,7 @@ if (intval($apiVersion) < 39) {
 }
 
 // build api endpoint url
-$gatewayUrl = "https://${prefix}.gateway.mastercard.com/api/rest/version/${apiVersion}/merchant/${merchantId}";
+$gatewayUrl = "https://${prefix}-gateway.mastercard.com/api/rest/version/${apiVersion}/merchant/${merchantId}";
 
 // parse query string
 $query = array();
