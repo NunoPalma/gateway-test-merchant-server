@@ -149,6 +149,10 @@ function decodeResponse($response) {
 
 function outputJsonResponse($response) {
     global $apiVersion;
+    global $headers;
+    global $region;
+    global $merchantId;
+    global $password;
 
     header('Content-Type: application/json');
 
@@ -156,7 +160,11 @@ function outputJsonResponse($response) {
 
     $wrapped = array(
         'apiVersion' => $apiVersion,
-        'gatewayResponse' => $decoded
+        'gatewayResponse' => $decoded,
+        'headers' => $headers,
+        'region' => $region,
+        'merchantId' => $merchantId,
+        'password' => $password
     );
 
     print_r(json_encode($wrapped));
