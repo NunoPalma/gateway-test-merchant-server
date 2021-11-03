@@ -28,7 +28,7 @@ include '_bootstrap.php';
         </style>
     </head>
     <body>
-        <h1>Gateway Test Merchant Server</h1>
+        <h1>Gateway Test Merchant Server: Updated</h1>
         <p>This is an sample application to help developers start building mobile applications using the Gateway mobile SDK.</p>
         <h3>Available APIs</h3>
         <ul>
