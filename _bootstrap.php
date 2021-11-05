@@ -20,7 +20,7 @@ error_reporting(E_ALL);
 
 // pull environment vars
 $merchantId = getenv('GATEWAY_MERCHANT_ID');
-$merchantId = explode(".", $merchantId)[1];
+$merchantId = explode(".", $merchantId)[1]; // TODO remove this
 $password = getenv('GATEWAY_API_PASSWORD');
 $region = getenv('GATEWAY_REGION');
 $apiVersion = getenv('GATEWAY_API_VERSION');
@@ -32,10 +32,8 @@ $merchantIdPrefix = substr($merchantId, 0, 4);
 // }
 
 // get regional url prefix
-$prefix = 'test';
-/*if (strcasecmp($region, "TEST") == 0) {
-    $prefix = 'test'
-} else if (strcasecmp($region, "ASIA_PACIFIC") == 0) {
+$prefix = 'mtf';
+if (strcasecmp($region, "ASIA_PACIFIC") == 0) {
     $prefix = 'ap';
 } else if (strcasecmp($region, "EUROPE") == 0) {
     $prefix = 'eu';
@@ -63,7 +61,7 @@ $prefix = 'test';
     $prefix = 'perf';
 } else {
     error(500, "Invalid region provided. Valid values include ASIA_PACIFIC, EUROPE, NORTH_AMERICA, INDIA, MTF");
-}*/
+}
 
 // validate apiVersion is above minimum
 if (intval($apiVersion) < 39) {
